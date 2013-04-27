@@ -1,4 +1,7 @@
-<div class="hero-unit">
+<% if user_signed_in? %>
+	<h1><center>Welcome to CheckAwt!</center></h1>
+	<%else%>
+	<div class="hero-unit">
      <h1>Finding services has never be easier.</h1>
      <p><font color="gray">Tell us what you're looking for.</font></p>
 <h2>I am looking for ... </h2>
@@ -6,11 +9,12 @@
 <center><iframe src="http://free.timeanddate.com/countdown/i3lsbqvk/n145/cf101/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac000/cpc000/pcd8873c/tc66c/fs100/szw320/szh135/tatTime%20left%20to%20Magoo's%20Site%20Launch/tac000/tptTime%20since%20Ruby%20on%20Rails%20Started/tpc000/mac000/mpc000/iso2013-05-31T00:00:00" frameborder="0" width="320" height="135"></iframe></center>
 <p>
 	</p>
-<a class="btn btn-primary btn-large">Sign Up Now!</a>
+<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 <p>
 	</p>
     </a>
  </div>
+ <%end%>
 
 
 
