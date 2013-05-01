@@ -4,7 +4,7 @@ class PinsController < ApplicationController
 
   before_filter :authenticate_user!, except: [:index]
   def index
-    @pins = Pin.order("description desc")
+    @pins = Pin.order("description desc").page(params[:page]).per_page(20)
 
     respond_to do |format|
       format.html # index.html.erb
